@@ -9,21 +9,34 @@
 </head>
 <body>
 <div class="container">
-<h1>Formulaire</h1>
-	<form action="check.php" method="POST">
-	  <div class="form-group">
-	    <label for="exampleInputEmail1">Nom</label>
-	    <input type="text" class="form-control" name="champ_login" placeholder="Votre nom">
-	  </div>
-	  <div class="form-group">
-	    <label for="exampleInputPassword1">Mot de passe</label>
-	    <input type="password" class="form-control" name="champ_pass" placeholder="Mot de passe">
-	  </div>
+<?php
+//check.php
 
-	  <button type="submit" class="btn btn-default">Connexion</button>
-	</form>
+$user = null;
+$pass = null;
 
+if( isset( $_POST['champ_login'] ) && isset( $_POST['champ_pass'] ) ) {
+	$user = $_POST['champ_login'];
+	$pass = $_POST['champ_pass'];
+}
+ if ( $user == "user" && $pass == "pass" ) {
+ 	// Lancement de session
+ 	session_start();
+ 	// Deux variables de session
+ 	$_SESSION['VALIDATION_ OK'] = "BRUCE";
+ 	$_SESSION['AUTH'] = session_id();
+ 	// On redirige la requéte
+ 	header("Location:index.php");
+ } 
+ else {
+	header("Location:login.php?error");
+ }
+
+ 
+
+
+
+?>
 </div>
-
 </body>
 </html>
