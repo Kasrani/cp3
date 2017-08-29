@@ -19,20 +19,21 @@
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span> 
 			</button> 
-			<a href="#" class="navbar-brand"><img src="assets/images/logo.png"></a> 
+			<a href="#" class="navbar-brand"><img src="assets/images/logo.png" alt="Wayk Now"></a> 
 		</div> 
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9"> 
 			<ul class="nav navbar-nav"> 
-				<li class="active"><a href="index.php?section=home">Home</a></li> 
-				<li><a href="index.php?section=categories">Gestion des categories</a></li> 
-				<li><a href="index.php?section=actualités">Gestion des actualités</a></li> 
+				<li class="<?php echo ($section == 'home')? 'active':''; ?>"><a href="index.php?section=home">Home</a></li> 
+				<li class="<?php echo ($section == 'categories')? 'active':''; ?>"><a href="index.php?section=categories">Gestion des categories</a></li> 
+				<li class="<?php echo ($section == 'actualites')? 'active':''; ?>"><a href="index.php?section=actualites">Gestion des actualités</a></li> 
 			</ul> 
 		</div> 
 	</div> 
 </nav><!--Fin nav-->
+<h3><?php echo $titrePage ?></h3>
 <section>
 	<div>
-		<?php //echo $content; ?>
+		<?php echo $content; ?>
 	</div>
 </section>
 
