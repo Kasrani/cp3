@@ -2,7 +2,6 @@
 class Client {
 	private $nom;
 	private $prenom;
-	public function payer() {
 		echo "Je paye";
 	}
 	public function getNom () {
